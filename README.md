@@ -6,10 +6,10 @@ UCI classification datasets loading utilities.
 
 You need to be in the same directory as the `setup.sh` file. Run the following in shell.
 
-`
+```
 chmod +x setup.sh
 ./setup.sh
-`
+```
 
 *What does this do?*
 
