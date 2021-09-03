@@ -46,7 +46,7 @@ def load_trn(dataset_name,return_X_y=False):
 # For example, see https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html
 def load_tst(dataset_name,return_X_y=False):
     """ Load the testing datasets """
-    data_dir = "data/" + dataset_name + "/"
+    data_dir = ROOTDIR+"/data/" + dataset_name + "/"
     data_file = data_dir + dataset_name + "_py.dat"
     label_file = data_dir + "labels_py.dat"
     test_folds_file = data_dir + "folds_py.dat"
