@@ -16,6 +16,11 @@ chmod +x setup.sh
 1. Downloads `data_py.zip` (39 MB) from 'http://www.bioinf.jku.at/people/klambauer/data_py.zip'. This link is listed at the Self-Normalizing Network repository https://github.com/bioinf-jku/SNNs.
 2. Unzips `data_py.zip` to `data/` (268M when unzipped).
 3. Cleans up the naming conventions of the subdirectories of `data/` and deletes an unused file (`data/abalone_dat.py`) in the directory.
+4. Make a copy of `_datasets.py` to `datasets.py` and append the full directory path to the file, so that the data files can be found.
+
+## How to use this
+
+See `jupyter_notebooks/02_LR_TF_example.ipynb` for a logistic regression example implemented in TensorFlow.
 
 
 ## Files and directories

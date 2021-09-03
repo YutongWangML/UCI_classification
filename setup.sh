@@ -23,3 +23,5 @@ cd oocytes-trisopterus-states-5b/
 mv oocytes_trisopterus_states_5b_py.dat oocytes-trisopterus-states-5b_py.dat 
 cd ..
 cd ..
+cp _datasets.py datasets.py
+echo "ROOTDIR='$(pwd)'" >> datasets.py

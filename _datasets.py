@@ -3,14 +3,14 @@ import pandas as pd
 import numpy as np
 
 def get_data_list(name):
-    return open("data_lists/"+ name + ".txt", "r").read().splitlines()
+    return open(ROOTDIR+"/data_lists/"+ name + ".txt", "r").read().splitlines()
 
 
 # Load the UCI datasets in the sklearn format
 # For example, see https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html
 def load_trn(dataset_name,return_X_y=False):
     """ Load the training datasets """
-    data_dir = "data/" + dataset_name + "/"
+    data_dir = ROOTDIR+"/data/" + dataset_name + "/"
     data_file = data_dir + dataset_name + "_py.dat"
     label_file = data_dir + "labels_py.dat"
     validation_folds_file = data_dir + "validation_folds_py.dat"
