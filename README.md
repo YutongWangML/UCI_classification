@@ -1,8 +1,13 @@
 # UCI_classification
 
-UCI classification datasets loading utilities.
+UCI classification datasets loading utilities. What is included 
 
-## Run this first
+- `setup.sh`: a shell script to automatically download and clean the 121 datasets curated by https://github.com/bioinf-jku/SNNs onto your machine.
+- `data_lists/*.txt`: curated sublists of datasets studied in the literature.
+- `metadata/*.csv`: metadata about each of the datasets.
+- `jupyter_notebooks/*.ipynb`: notes for using this repository.
+
+## Setup/Installation
 
 You need to be in the same directory as the `setup.sh` file. Run the following in shell.
 
@@ -13,7 +18,7 @@ source setup.sh
 I've left comments in `setup.sh` regarding what the code is doing. In a nutshell, the script downloads the data and clean up the naming schemes.
 
 
-## How to use this
+## Usage/Example
 
 See `jupyter_notebooks/02_LR_TF_example.ipynb` for a logistic regression example implemented in TensorFlow.
 
@@ -46,11 +51,14 @@ Lists of datasets
 ```
 data_list/
 ├── all.txt                          # the list all datasets
-├── arora2019harnessing.txt          # list of 90 datasets considered in [Arora et al, 2019]
+├── arora2019harnessing.txt          # 90 datasets used in [Arora et al, 2019]
+├── fathony2016adversarial.txt       # 12 datasets used in [Fathony et al, 2016]
 └── testing.txt                      # three datasets: [iris, ionosphere, wine]. Useful for testing.
 ```
 
 [Arora et al, 2019](https://arxiv.org/abs/1910.01663)
+
+[Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html)
 
 
 ### Metadata about the datasets `metadata/`
