@@ -61,7 +61,7 @@ data_list/
 [Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html) uses the following 12 datasets:
 
 |    | name there   | name here                | # class | # samp | # trn | # tst | # feat |
-|----+--------------+--------------------------+---------+--------+-------+-------+--------|
+|----|--------------|--------------------------|---------|--------|-------|-------|--------|
 |  1 | iris         | iris                     |       3 |    150 |   105 |    45 |      4 |
 |  2 | glass        | glass                    |       6 |    214 |   149 |    65 |      9 |
 |  3 | redwine      | wine-quality-red         |      10 |   1599 |  1119 |   480 |     11 |
@@ -74,6 +74,7 @@ data_list/
 | 10 | libras       | libras                   |      15 |    360 |   252 |   108 |     90 |
 | 11 | vertebral    | vertebral-column-3clases |       3 |    310 |   217 |    93 |      6 |
 | 12 | breatstissue | breast-tissue            |       6 |    106 |    74 |    32 |      9 |
+
 
 
 
