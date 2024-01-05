@@ -1,0 +1,12 @@
+ iris
+ glass
+ wine-quality-red
+ ecoli
+ statlog-vehicle
+ image-segmentation
+ statlog-landsat
+ optical
+ page-blocks
+ libras
+ vertebral-column-3clases
+ breast-tissue

@@ -7,16 +7,11 @@ UCI classification datasets loading utilities.
 You need to be in the same directory as the `setup.sh` file. Run the following in shell.
 
 ```
-chmod +x setup.sh
-./setup.sh
+source setup.sh
 ```
 
-*What does the above do?*
+I've left comments in `setup.sh` regarding what the code is doing. In a nutshell, the script downloads the data and clean up the naming schemes.
 
-1. Downloads `data_py.zip` (39 MB) from 'http://www.bioinf.jku.at/people/klambauer/data_py.zip'. This link is listed at the Self-Normalizing Network repository https://github.com/bioinf-jku/SNNs.
-2. Unzips `data_py.zip` to `data/` (268M when unzipped).
-3. Cleans up the naming conventions of the subdirectories of `data/` and deletes an unused file (`data/abalone_dat.py`) in the directory.
-4. Make a copy of `_datasets.py` to `datasets.py` and append the full directory path to the file, so that the data files can be found.
 
 ## How to use this
 
