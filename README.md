@@ -58,7 +58,23 @@ data_list/
 
 [Arora et al, 2019](https://arxiv.org/abs/1910.01663)
 
-[Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html)
+[Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html) uses the following 12 datasets:
+
+|    | name there   | name here                | # class | # samp | # trn | # tst | # feat |
+|----+--------------+--------------------------+---------+--------+-------+-------+--------|
+|  1 | iris         | iris                     |       3 |    150 |   105 |    45 |      4 |
+|  2 | glass        | glass                    |       6 |    214 |   149 |    65 |      9 |
+|  3 | redwine      | wine-quality-red         |      10 |   1599 |  1119 |   480 |     11 |
+|  4 | ecoli        | ecoli                    |       8 |    336 |   235 |   101 |      7 |
+|  5 | vehicle      | statlog-vehicle          |       4 |    846 |   592 |   254 |     18 |
+|  6 | segment      | image-segmentation       |       7 |   2310 |  1617 |   693 |     19 |
+|  7 | sat          | statlog-landsat          |       7 |   6435 |  4435 |  2000 |     36 |
+|  8 | optdigits    | optical                  |      10 |   5620 |  3823 |  1797 |     64 |
+|  9 | pageblocks   | page-blocks              |       5 |   5473 |  3831 |  1642 |     10 |
+| 10 | libras       | libras                   |      15 |    360 |   252 |   108 |     90 |
+| 11 | vertebral    | vertebral-column-3clases |       3 |    310 |   217 |    93 |      6 |
+| 12 | breatstissue | breast-tissue            |       6 |    106 |    74 |    32 |      9 |
+
 
 
 ### Metadata about the datasets `metadata/`
