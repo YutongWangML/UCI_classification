@@ -75,6 +75,7 @@ data_list/
 | 11 | vertebral    | vertebral-column-3clases |       3 |    310 |   217 |    93 |      6 |
 | 12 | breatstissue | breast-tissue            |       6 |    106 |    74 |    32 |      9 |
 
+We note that the numbers reported in columns `# trn` and `# tst` are directly taken from their Table 1, which does not match the train-test split in this repository. See Fathony et al. 2016 Section 4 for details on their experimental setup.
 
 
 
