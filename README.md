@@ -1,51 +1,65 @@
 # UCI_classification
 
-UCI classification datasets loading utilities. What is included 
+UCI classification datasets loading utilities. 
 
-- `setup.sh`: a shell script to automatically download and clean the 121 datasets curated by https://github.com/bioinf-jku/SNNs onto your machine.
-- `data_lists/*.txt`: curated sublists of datasets studied in the literature.
-- `metadata/*.csv`: metadata about each of the datasets.
-- `jupyter_notebooks/*.ipynb`: notes for using this repository.
+
 
 ## Setup/Installation
 
-You need to be in the same directory as the `setup.sh` file. Run the following in shell.
+Navigate to the root directory of this repository, then run the following in shell.
 
 ```
-source setup.sh
+pip install .
 ```
 
-I've left comments in `setup.sh` regarding what the code is doing. In a nutshell, the script downloads the data and clean up the naming schemes.
+## Functionalities/Usage examples
 
+### Load a dataset
 
-## Usage/Example
-
-See `jupyter_notebooks/02_LR_TF_example.ipynb` for a logistic regression example implemented in TensorFlow.
+```
+import UCI_classification as uci
+Xtrn, ytrn = uci.datasets.load_trn('iris', return_X_y=True)
+```
 
 ### Get metadata of datasets
 
 ```
 import UCI_classification as uci
-tiny = uci.dataloader.get_data_list('tiny')
-uci.dataloader.get_metadata(tiny)
+all_datasets = uci.datasets.get_data_list('all')
+uci.datasets.get_metadata(all_datasets)
 ```
 
 Output:
 ```
-    dataset_name  n_samples  n_train  n_test  n_features  n_classes  L2_dist_est
-47    ionosphere        351      263      88          33          2    61.970938
-48          iris        150      113      37           4          3     6.266293
-116         wine        178      134      44          13          3    25.647811
-```
+           dataset_name  n_samples  n_train  n_test  n_features  n_classes  L2_dist_est
+0               abalone       4177     3133    1044           8          3     8.669142
+1    acute-inflammation        120       90      30           6          2    12.625558
+2       acute-nephritis        120       90      30           6          2    12.537478
+3                 adult      48842    32561   16281          14          2    23.300632
+4             annealing        898      798     100          31          5    49.967534
+..                  ...        ...      ...     ...         ...        ...          ...
+116                wine        178      134      44          13          3    25.647811
+117    wine-quality-red       1599     1199     400          11          6    16.271732
+118  wine-quality-white       4898     3674    1224          11          7    18.127150
+119               yeast       1484     1113     371           8         10     9.578626
+120                 zoo        101       76      25          16          7    34.207623
 
+[121 rows x 7 columns]
+```
+Note, see section below regarding the column `L2_dist_est`.
 
 
 ## Files and directories
 
+Overview of the content in the `UCI_classification` module subdirectory:
+
+- `UCI_classification/data_py.zip`: archive of the 121 UCI classification datasets originally downloaded from http://www.bioinf.jku.at/people/klambauer/data_py.zip hosted by Dr. Klambauer. These 121 UCI datasets were originally analyzed in [[Fernández-Delgado et al., 2014]](https://jmlr.org/papers/volume15/delgado14a/delgado14a.pdf).
+- `UCI_classification/data_lists/*.txt`: curated sublists of datasets studied in the literature.
+- `UCI_classification/metadata/*.csv`: metadata about each of the datasets.
 
 ### Raw data files
 
-`data/` - contains the raw data files (feature vectors, labels, validation sets)
+The datasets are stored in the directory `UCI_classification/data/` which is unzipped from `UCI_classification/data_py.zip` after installation.
 
 The format is the same as in the original compilation in https://github.com/bioinf-jku/SNNs and is shown below:
 
@@ -73,9 +87,9 @@ data_list/
 └── testing.txt                      # three datasets: [iris, ionosphere, wine]. Useful for testing.
 ```
 
-[Arora et al, 2019](https://arxiv.org/abs/1910.01663) uses 90 datasets. See their "Appendix A Dataset Selection" for a description of their curation methodology. Also, see their [github repo](https://github.com/LeoYu/neural-tangent-kernel-UCI).
+- [Arora et al, 2019](https://arxiv.org/abs/1910.01663) uses 90 datasets. See their "Appendix A Dataset Selection" for a description of their curation methodology. Also, see their [github repo](https://github.com/LeoYu/neural-tangent-kernel-UCI).
 
-[Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html) uses the following 12 datasets:
+- [Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html) uses the following 12 datasets:
 
 |    | name there   | name here                | # class | # samp | # trn | # tst | # feat |
 |----|--------------|--------------------------|---------|--------|-------|-------|--------|
@@ -104,20 +118,14 @@ metadata/
 └── L2_dist_est.csv                   # precomputed values of L2_dist_est, see code chunk below and [Shankar et al 2020].
 ```    
 
-[Shankar et al 2020](http://proceedings.mlr.press/v119/shankar20a/shankar20a.pdf)
+### On `L2_dist_est`
+
+This is a dataset level numerical value computed originally in [Shankar et al 2020](http://proceedings.mlr.press/v119/shankar20a/shankar20a.pdf).
+The computation is performed as follows:
 
 ```
 dist_est = kernel.est_dist(x_train, 1000)
 # See https://github.com/modestyachts/neural_kernels_code/blob/0202718ce8da87f7c1682a6fd87f0caeeaba0859/UCI/UCI.py#L80
 # The function est_dist is from 
 # https://github.com/modestyachts/neural_kernels_code/blob/0202718ce8da87f7c1682a6fd87f0caeeaba0859/UCI/kernel.py
-```
-
-### Jupyter notebooks and tutorials `jupyter_notebooks/`
-
-
-```
-jupyter_notebooks/
-├── 01_datasets_summary.ipynb              # display the table of summary
-└── 02_LR_TF_example.ipynb                 # Logistic regression in TensorFlow example
 ```
