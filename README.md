@@ -22,6 +22,23 @@ I've left comments in `setup.sh` regarding what the code is doing. In a nutshell
 
 See `jupyter_notebooks/02_LR_TF_example.ipynb` for a logistic regression example implemented in TensorFlow.
 
+### Get metadata of datasets
+
+```
+import UCI_classification as uci
+tiny = uci.dataloader.get_data_list('tiny')
+uci.dataloader.get_metadata(tiny)
+```
+
+Output:
+```
+    dataset_name  n_samples  n_train  n_test  n_features  n_classes  L2_dist_est
+47    ionosphere        351      263      88          33          2    61.970938
+48          iris        150      113      37           4          3     6.266293
+116         wine        178      134      44          13          3    25.647811
+```
+
+
 
 ## Files and directories
 
