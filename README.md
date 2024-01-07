@@ -6,10 +6,18 @@ UCI classification datasets loading utilities.
 
 ## Setup/Installation
 
+### Method 1: download then install
+
 Navigate to the root directory of this repository, then run the following in shell.
 
 ```
 pip install .
+```
+
+### Method 2: pip install from github
+
+```
+pip install git+https://github.com/YutongWangUMich/UCI_classification.git
 ```
 
 ## Functionalities/Usage examples
