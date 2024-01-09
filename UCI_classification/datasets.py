@@ -86,8 +86,8 @@ def load_tst(dataset_name, return_X_y=False):
 def load_all(dataset_name):
     """Load the merged training and testing datasets."""
     # Useful if you want to create your own train-test splits
-    Xtrn, ytrn = datasets.load_trn(dataset_name,return_X_y=True)
-    Xtst, ytst = datasets.load_tst(dataset_name,return_X_y=True)
+    Xtrn, ytrn = load_trn(dataset_name,return_X_y=True)
+    Xtst, ytst = load_tst(dataset_name,return_X_y=True)
     Xall = np.vstack([Xtrn,Xtst])
     yall = np.concatenate([ytrn, ytst])
     return (Xall,yall)
