@@ -1,6 +1,6 @@
 # UCI_classification
 
-UCI classification datasets loading utilities. 
+UCI classification datasets ([csv of metadata included datasets](https://github.com/YutongWangUMich/UCI_classification/blob/main/UCI_classification/metadata/datasets_summary.csv))loading utilities. 
 
 
 
@@ -95,7 +95,7 @@ data_list/
 └── testing.txt                      # three datasets: [iris, ionosphere, wine]. Useful for testing.
 ```
 
-- [Arora et al, 2019](https://arxiv.org/abs/1910.01663) uses 90 datasets. See their "Appendix A Dataset Selection" for a description of their curation methodology. Also, see their [github repo](https://github.com/LeoYu/neural-tangent-kernel-UCI).
+- [Arora et al, 2019](https://arxiv.org/abs/1910.01663) uses 90 datasets. See their "Appendix A Dataset Selection" for a description of their curation methodology. Also, see [their github repo](https://github.com/LeoYu/neural-tangent-kernel-UCI).
 
 - [Fathony et al, 2016](https://proceedings.neurips.cc/paper/2016/hash/ad13a2a07ca4b7642959dc0c4c740ab6-Abstract.html) uses the following 12 datasets:
 
