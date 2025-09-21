@@ -1,8 +1,23 @@
-import os
+import os, zipfile
+from importlib.resources import files  # Python 3.9+; for 3.8 use importlib_resources
 import pandas as pd
 import numpy as np
 from sklearn.utils import Bunch
 from pkg_resources import resource_filename
+
+def _ensure_data_unpacked():
+    pkg_root = files('UCI_classification')
+    data_dir = pkg_root / 'data'
+    if not data_dir.exists():
+        zpath = pkg_root / 'data_py.zip'
+        if not zpath.exists():
+            # Fail clearly if the zip wasn't packaged
+            raise FileNotFoundError(f"Missing data archive: {zpath}")
+        with zipfile.ZipFile(zpath, 'r') as zf:
+            zf.extractall(pkg_root)
+
+_ensure_data_unpacked()
+
 
 
 def get_data_list(name):

@@ -57,7 +57,7 @@ setup(
     url='https://github.com/YutongWangUMich/UCI_classification',
     packages=find_packages(),
     package_data={
-        'UCI_classification': ['data_lists/*.txt', 'metadata/*.csv' 'data_py.zip'],
+        'UCI_classification': ['data_lists/*.txt', 'metadata/*.csv', 'data_py.zip'],
     },
     include_package_data=True,
     cmdclass={
